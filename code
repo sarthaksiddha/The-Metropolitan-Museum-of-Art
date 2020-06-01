@@ -1,0 +1,40 @@
+ select * 
+ from met
+ limit 10;
+
+select count(*)
+from met; 
+
+select count(*)
+from met
+where category like '%celery%';
+
+select distinct category
+from met
+where category like '%celery%';
+
+select title,medium,date
+from met
+where date like '%1600%';
+
+select min(date)
+from met;
+
+select country,count(*)
+from met 
+group by country
+order by  count(*) desc
+limit 10;
+
+select title, category, count(*)
+from met
+group by category
+having count(*)>100;
+
+select medium, count(*)
+from met
+where medium like '%gold%'
+   or medium like '%silver%'
+group by 1
+order by 2 desc;
+
